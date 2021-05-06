@@ -30,8 +30,16 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="MyToDoListTest\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="MyToDoListTest\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="MyToDoListTest\**" />
+    <EmbeddedResource Remove="MyToDoListTest\**" />
+    <TypeScriptCompile Remove="MyToDoListTest\**" />
   </ItemGroup>
 
   <ItemGroup>
