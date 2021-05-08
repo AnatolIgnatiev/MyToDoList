@@ -8,19 +8,20 @@ import Task from './Task';
 const EditTask = forwardRef((props: JSXElement, ref) => {
     const [displayEdit, setDisplayEdit] = useState(false);
 
-    useImperativeHandle(ref, () => {
+    useImperativeHandle(ref, () => 
+    {
         return {
             open: () => openEdit(),
             close: () => closeEdit()
         }
     });
 
-    const openEdit = () => {
+    const openEdit = () => 
+    {
         setDisplayEdit(true)
     }
     const closeEdit = () =>
     {
-        
         setDisplayEdit(false)
     }
 
@@ -32,7 +33,7 @@ const EditTask = forwardRef((props: JSXElement, ref) => {
                     {props.children}
                 </div>
             </div>,
-            document.getElementById("edit-root")
+            document.getElementById("root")
         )
     }
     return null;

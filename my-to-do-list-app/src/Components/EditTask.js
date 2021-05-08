@@ -21,7 +21,7 @@ var EditTask = react_1.forwardRef(function (props, ref) {
         return react_dom_1.createPortal(React.createElement("div", { className: 'edit-warpper' },
             React.createElement("div", { className: 'edit-content' },
                 React.createElement("button", { onClick: closeEdit }, "X"),
-                props.children)), document.getElementById("edit-root"));
+                props.children)), document.getElementById("root"));
     }
     return null;
 });

@@ -5,7 +5,8 @@ import { ITask } from './Interfaces';
 import './App.css';
 
 
-const App: FC = () => {
+const App: FC = () =>
+{
     var dateFormat = require("dateformat");
     const [task, setTask] = useState<string>("");
     const [deadlineDate, setDeadline] = useState<Date>(dateFormat(new Date(), "yyyy-mm-dd"));//
@@ -44,17 +45,20 @@ const App: FC = () => {
                 setToDoList(data)
             });
     }
-    
+
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void =>
     {
         console.log("in handleChange start" + deadlineDate);
-        if (event.target.name === "task") {
+        if (event.target.name === "task")
+        {
             setTask(event.target.value);
         }
-        else if (event.target.name === "status") {
+        else if (event.target.name === "status")
+        {
             setStatus(event.target.value);
         }
-        else {
+        else
+        {
             setDeadline(dateFormat(new Date(event.target.value), "yyyy-mm-dd"));
         }
         console.log("in handleChange finish" + deadlineDate);
@@ -65,13 +69,13 @@ const App: FC = () => {
         var result = await postNewTask();
         result.json().then(value =>
         {
-            toDoList.push(value); 
+            toDoList.push(value);
             setToDoList(toDoList);
             setTask("");
-            setDeadline(dateFormat(deadlineDate, "yyyy-mm-dd")); 
+            setDeadline(dateFormat(deadlineDate, "yyyy-mm-dd"));
         });
     };
-    
+
     useEffect(() => { getToDoTasks(); }, []);
 
     return (
@@ -101,10 +105,18 @@ const App: FC = () => {
                 <button onClick={addTask}>Add Task</button>
             </div>
             <div className="taskList">
-                {toDoList.map((task: ITask, key: number) =>
-                {
-                    return <Task key={key} task={task} />;
-                })}
+                <table>
+                    <tr>
+                        <th>TASK</th>
+                        <th>DEADLINE</th>
+                        <th>STATUS</th>
+                        <th></th>
+                    </tr>
+                    {toDoList.map((task: ITask, key: number) =>
+                    {
+                        return <Task key={key} task={task} />;
+                    })}
+                </table>
             </div>
         </div>
     );
