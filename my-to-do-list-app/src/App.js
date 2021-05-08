@@ -119,9 +119,16 @@ var App = function () {
             React.createElement("input", { type: "text", placeholder: "Status", name: "status", value: status, onChange: handleChange }),
             React.createElement("input", { type: "date", placeholder: "Deadline", name: "deadline", value: dateFormat(deadlineDate, "yyyy-mm-dd").toString(), onChange: handleChange }),
             React.createElement("button", { onClick: addTask }, "Add Task")),
-        React.createElement("div", { className: "taskList" }, toDoList.map(function (task, key) {
-            return React.createElement(Task_1.default, { key: key, task: task });
-        }))));
+        React.createElement("div", { className: "taskList" },
+            React.createElement("table", null,
+                React.createElement("tr", null,
+                    React.createElement("th", null, "TASK"),
+                    React.createElement("th", null, "DEADLINE"),
+                    React.createElement("th", null, "STATUS"),
+                    React.createElement("th", null)),
+                toDoList.map(function (task, key) {
+                    return React.createElement(Task_1.default, { key: key, task: task });
+                })))));
 };
 exports.default = App;
 //# sourceMappingURL=App.js.map

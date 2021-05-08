@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_1 = require("react");
 var EditTask_1 = require("./EditTask");
+require("../App.css");
 var Task = function (_a) {
     var task = _a.task;
     var dateFormat = require("dateformat");
@@ -62,31 +63,24 @@ var Task = function (_a) {
         setMessage("");
         editRef.current.open();
     };
-    return (React.createElement("div", { className: "task" },
-        React.createElement("div", { className: "content" },
-            React.createElement("table", null,
-                React.createElement("tbody", null,
-                    React.createElement("tr", null,
-                        React.createElement("td", null, editedTask),
-                        React.createElement("td", null, dateFormat(new Date(editedDeadlineDate), "yyyy-mm-dd").toString()),
-                        React.createElement("td", null, editedStatus),
-                        React.createElement("td", null,
-                            React.createElement("button", { onClick: openEdit }, "Edit")))))),
+    return (React.createElement("tr", { className: "task" },
+        React.createElement("td", null, editedTask),
+        React.createElement("td", null, dateFormat(new Date(editedDeadlineDate), "yyyy-mm-dd").toString()),
+        React.createElement("td", null, editedStatus),
+        React.createElement("td", null,
+            React.createElement("button", { onClick: openEdit }, "Edit")),
         React.createElement(EditTask_1.default, { ref: editRef },
             React.createElement("h1", null, "EditTask"),
             React.createElement("h5", null, message),
-            React.createElement("div", null,
-                React.createElement("table", null,
-                    React.createElement("tbody", null,
-                        React.createElement("tr", null,
-                            React.createElement("td", null,
-                                React.createElement("input", { type: "text", placeholder: "Task", name: "task", value: editedTask, onChange: handleEditChange })),
-                            React.createElement("td", null,
-                                React.createElement("input", { type: "date", placeholder: "Deadline", name: "deadline", value: dateFormat(editedDeadlineDate, "yyyy-mm-dd").toString(), onChange: handleEditChange })),
-                            React.createElement("td", null,
-                                React.createElement("input", { type: "text", placeholder: "Status", name: "status", value: editedStatus, onChange: handleEditChange }))))),
-                React.createElement("button", { onClick: handleSaveChanges }, "Save Changes"),
-                React.createElement("button", { onClick: function () { handleDeleteTask(task.id); } }, "Delete Task")))));
+            React.createElement("tr", null,
+                React.createElement("td", null,
+                    React.createElement("input", { type: "text", placeholder: "Task", name: "task", value: editedTask, onChange: handleEditChange })),
+                React.createElement("td", null,
+                    React.createElement("input", { type: "date", placeholder: "Deadline", name: "deadline", value: dateFormat(editedDeadlineDate, "yyyy-mm-dd").toString(), onChange: handleEditChange })),
+                React.createElement("td", null,
+                    React.createElement("input", { type: "text", placeholder: "Status", name: "status", value: editedStatus, onChange: handleEditChange }))),
+            React.createElement("button", { onClick: handleSaveChanges }, "Save Changes"),
+            React.createElement("button", { onClick: function () { handleDeleteTask(task.id); } }, "Delete Task"))));
 };
 exports.default = Task;
 //# sourceMappingURL=Task.js.map

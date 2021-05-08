@@ -31,21 +31,32 @@
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="MyToDoListTest\**" />
+    <Content Remove="Pages\**" />
+    <Content Remove="Views\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="MyToDoListTest\**" />
+    <None Remove="Pages\**" />
+    <None Remove="Views\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="MyToDoListTest\**" />
+    <Compile Remove="Pages\**" />
+    <Compile Remove="Views\**" />
     <EmbeddedResource Remove="MyToDoListTest\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="Views\**" />
     <TypeScriptCompile Remove="MyToDoListTest\**" />
+    <TypeScriptCompile Remove="Pages\**" />
+    <TypeScriptCompile Remove="Views\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="my-to-do-list-app\src\Components\EditTask.tsx" />
     <None Remove="my-to-do-list-app\src\Components\Task.tsx" />
     <None Remove="my-to-do-list-app\src\interfaces.ts" />
+    <None Remove="my-to-do-list-app\src\logo.svg" />
   </ItemGroup>
 
   <!--<ItemGroup>
